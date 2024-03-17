@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/wordlaw/static/css/main.7acaea2f.css",
-    "main.js": "/wordlaw/static/js/main.3dcdcfae.js",
+    "main.js": "/wordlaw/static/js/main.fd1c69ba.js",
     "index.html": "/wordlaw/index.html",
     "main.7acaea2f.css.map": "/wordlaw/static/css/main.7acaea2f.css.map",
-    "main.3dcdcfae.js.map": "/wordlaw/static/js/main.3dcdcfae.js.map"
+    "main.fd1c69ba.js.map": "/wordlaw/static/js/main.fd1c69ba.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.3dcdcfae.js"
+    "static/js/main.fd1c69ba.js"
   ]
 }
