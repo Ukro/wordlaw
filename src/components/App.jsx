@@ -1,32 +1,41 @@
 import i18n from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { I18nextProvider } from 'react-i18next';
-import { initReactI18next } from 'react-i18next';
 
-
-// Initialize i18next with a provider
-i18n.use(initReactI18next).init({
-  resources: {
-    uk: {
-      translation: {
-        welcome: 'Вітаємо на нашому сайті!',
-        about: 'Про нас',
-        contact: 'Звязатися з нами',
-      },
-    },
-    en: {
-      translation: {
-        welcome: 'Welcome to our website!',
-        about: 'About Us',
-        contact: 'Contact Us',
-      },
+// Переклад безпосередньо в коді
+const resources = {
+  uk: {
+    translation: {
+      welcome: 'Вітаємо на нашому сайті!',
+      about: 'Про нас',
+      contact: 'Звязатися з нами',
     },
   },
-  lng: 'uk', // Default language
-  fallbackLng: 'uk',
+  en: {
+    translation: {
+      welcome: 'Welcome to our website!',
+      about: 'About Us',
+      contact: 'Contact Us',
+    },
+  },
+};
+
+// Функція для визначення мови за IP
+function getLanguageByIP() {
+  // Замість цього коду використовуйте API для визначення IP та мови
+  // ...
+
+  // Приклад: якщо IP з України, повертаємо "uk", інакше "en"
+  return navigator.language.includes('uk') ? 'uk' : 'en';
+}
+
+// Ініціалізація i18next
+i18n.init({
+  resources,
+  lng: getLanguageByIP(), // Встановлюємо мову за IP
+  fallbackLng: 'en',
 });
 
-// Wrap your application with the i18next Provider
 function App() {
   return (
     <I18nextProvider i18n={i18n}>
@@ -35,7 +44,6 @@ function App() {
   );
 }
 
-// Use useTranslation hook within a React function component
 function AppContent() {
   const { t } = useTranslation();
 
